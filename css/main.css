@@ -1,0 +1,141 @@
+*{
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+:root{
+  --primary-color: #125712;
+  --secobdary-color: #FF4656;
+  --font:  font-family: Varela Round;
+  --text-color: #525d68
+}
+
+body{
+  font-family: var(--font);
+}
+
+h1,h2,h3,h4,h5,h6{
+  letter-spacing: 0.8px;
+}
+
+.underline{
+  border-bottom: 2px #ff3748 solid;
+}
+
+#header-section{
+  background-image: url(../images/bg-image_2.jpg);
+  background-size: cover;
+  color: #fff;
+}
+
+#profile-image{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+#hire-me, #submit {
+  background-color: var(--secobdary-color);
+  color: #fff;
+}
+
+#about-me-section p, footer p{
+  line-height: 22px;
+  letter-spacing: 0.6px;
+    font-size: 14px;
+    color:var(--text-color)
+}
+
+#about-me-section h5{
+  color: var(--secobdary-color);
+}
+
+#about-me-section span:nth-child(2){
+  color: var(--secobdary-color);
+}
+
+#about-me-section span:nth-child(3){
+  color: rgb(18, 182, 18);
+}
+
+#contact-form-section{
+  background-image: linear-gradient(to top left,#0af80a, #125712 );
+  color: #fff;
+}
+
+
+/* SKILL BAR */
+
+
+.skill_bar{
+  display: flex;
+  flex-direction: row;
+  margin: auto auto 20px auto;
+ flex-wrap: nowrap;
+ height: 26px;
+ width: 80%;
+ font-size: 14px;
+
+
+}
+
+.skill_name{
+  height: 100%;
+  background-color: rgb(10, 248, 10);
+  color: #fff;
+  width: 20%;
+  
+}
+
+.bar_bg{
+  height: 100%;
+  background-color: rgb(209, 212, 209);
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: 0 50px 50px 0;
+  width: 80%;  
+}
+.strength{
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.skill_name > p, .bar_bg > p{
+  line-height: 26px;
+}
+
+#skill-section{
+  background-color: #ECEBEB;
+}
+
+footer{
+  background-color: var(--primary-color);
+  
+}
+footer p{
+  color: rgb(74, 168, 19);
+}
+
+footer p:nth-child(2){
+  margin-bottom: 0;
+}
+
+footer a{
+  color: rgb(10, 248, 10);
+}
+
+@media (min-width: 768px){
+  #skill-section{
+    background-image: url(../images/bg-image_7.jpg);
+    background-size: cover;
+    background-position-y: 70%;
+    padding-left: 60px;
+   
+  }
+
+ 
+}

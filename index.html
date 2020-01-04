@@ -1,0 +1,245 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fizzyboy</title>
+
+  <!-- <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/gallery.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <script src="js/jquery.min.js"></script> -->
+  
+  <!-- <script src="js/bootstrap.min.js"></script> -->
+  <script src="js/main.js"></script>
+</head>
+<body>
+ <div class="container-fluid">
+   <header id="header-section" class="row h-100">
+     <section id="about" class="col-12 m-auto text-center">
+       <h5>Hi, I'm a</h5>
+       <h3>Web Developer</h3>
+       <small>I build responsive, user friendly and robust websites</small>
+       <br>
+       <button id="hire-me" class=" btn mt-5">Hire Me</button>
+     </section>
+   </header>
+   <main class="row">
+     <section id="about-me-section" class="col-sm-12 col-md-7 col-lg-6 mx-auto my-5">
+       <h4> <span class="underline">Abou</span>t</h4>
+       <div class="text-center">
+         <img src="images/profile_image.jpg" class="" alt="profile image" id="profile-image">
+         <h5 class="mt-3">Adeniji Adefisayo - Web Developer</h5>
+         <p id="aboutMe" >I am a full stack web developer, specialised in MERN stack,  I build the frontend using HTML5,CSS3,SASS/SCSS, Javascript and React.js as the library. I have the ability to build from scratch and also with bootstrap and content management system like wordpress.
+            I build the backend using Node.js/Express.js, MongoDB and PostgreSQL.
+             I fit easily in team and can as well work alone.
+          At my liesure time, I like hanging out with friends, 
+          reading books and listening to good musics.
+          <br>
+          <span>
+            <strong>
+              NOTE: 
+            </strong>
+          </span>
+          <span>
+            <i>
+              I am a fast learner, I have the ability to learn any other technology
+               you use in your team within the shortest period of time
+            </i>
+          </span>
+        </p>
+       </div>
+     </section>
+   </main>
+   <main class="row" id="skill-section">
+    <section class="col-sm-12 col-md-7 col-lg-6 mx-auto my-5" id="skill_set">
+    </section>
+   </main>
+   <main id="contact-form-section" class="row">
+     <section  class="col-sm-12 col-md-7 col-lg-6 mx-auto my-5">
+      <form>
+        <h4><span class="underline">Conta</span>ct Us</h4>
+        <p>Kindly contact us and let us know how you want us to assist you</p>
+        <div class="form-group">
+            <label for="fullName">Name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="kindly enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="kindly enter your email address e.g name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="telephone">Phone number</label>
+          <input type="tel" class="form-control" id="telephone" placeholder="Kindly enter your phone number">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="emessage" rows="3"></textarea>
+        </div>
+        <button type="submit" id="submit" class="btn">Send</button>
+      </form>
+     </section>
+   </main>
+   <footer class="row">
+     <div class="col-sm-12 col-md-6 mx-auto text-center my-4">
+      <p>If you would like me to work on your project as a team or individually, i am readily available,
+        kindly contact me through the contact form or call me on +2347017817802</p>
+     <p>Connect with me on social media via:</p>
+     <a href="#"><i class="fa fa-facebook-square"></i></a>
+     <a href="#"><i class="fa fa-linkedin-square"></i></a>
+     <a href="#"><i class="fa fa-twitter-square"></i></a>
+     <a href="#"><i class="fa fa-tumblr-square"></i></a>
+     <a href="#"><i class="fa fa-whatsapp"></i></a>
+     </div>
+  </footer>
+ </div>
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+
+ <script id="todo-template" type="text/x-handlebars-template">
+    <h4 class="mb-5"><span class="underline">My Sk</span>ills</h4>
+     {{#each skills}}
+       <div class="skill_bar">
+         <div class="skill_name"><p>{{skillName}}</p></div>
+         <div class="bar_bg">
+           <div class="strength" style="width:{{percentage}}%" data-id="{{@index}}"> </div>
+           <p class="">{{percentage}}%</p>
+         </div>
+       </div>
+     {{/each}}
+ 
+</script>
+
+
+<!-- javascript code to fill the template -->
+<script type="text/javascript">
+
+// grab our template code from the DOM
+var source   = $("#todo-template").html();
+
+// compile the template so we can use it
+var template = Handlebars.compile(source);
+
+// create some data
+var task1 = {
+    skills: [
+      {
+        "skillName":"HTML5",
+        "percentage": 0,
+        "percent":95
+      },
+      {
+        "skillName":"CSS3",
+        "percentage": 0,
+        "percent":85
+      },
+      {
+        "skillName":"JavaScript",
+        "percentage": 0,
+        "percent":90
+      },
+      {
+        "skillName":"JQuery",
+        "percentage": 0,
+        "percent":75
+      },
+      {
+        "skillName":"React.Js",
+        "percentage": 0,
+        "percent":75
+      },
+      {
+        "skillName":"Sass",
+        "percentage": 0,
+        "percent":80
+      },
+      {
+        "skillName":"NodeJs",
+        "percentage": 0,
+        "percent":70
+      }
+    ]
+   
+};
+var targetPos = $('#aboutMe').offset().top;
+var targetPosAbout = targetPosAbout = $('#about').offset().top;
+// // if(window.innerWidth > 767 ){
+//   targetPosAbout = $('#about').offset().top;
+// }else{
+//   targetPosAbout = $('#about_body').offset().top;
+// }
+// Function to render data on HTML
+function renderDom(data, htmlDiv){
+  var html    = template(data);
+  $(htmlDiv).html(html)
+}
+
+
+$(document).ready(function(){
+
+  renderDom(task1, "#skill_set")
+// Function to Load a bar
+
+  function loadEachBar(index, percent){
+
+  
+    $(window).scroll(()=>{
+
+    var scrollPos = $(window).scrollTop();
+
+    
+
+      if(scrollPos > targetPos){
+        let handle = setInterval(function (){
+          
+          if(task1["skills"][index]["percentage"] < percent){
+            
+            task1["skills"][index]["percentage"]++;
+
+            renderDom(task1,"#skill_set");
+
+          }
+
+        }, 50);
+
+      }
+
+     
+
+    });
+  }
+  
+  $(window).on('scroll', ()=>{
+    var scrollPos = $(window).scrollTop();
+
+    if(scrollPos >= targetPosAbout){
+        $('#navbar').css("background-color", "rgb(18, 87, 18)");
+      }else{
+        $('#navbar').css("background-color", "transparent");
+      }
+  })
+
+  for(let i = 0; i < task1["skills"].length; i++){
+    loadEachBar(i, task1["skills"][i]["percent"]);
+  }
+
+  $('#nav_button').on('click', ()=>{
+    var scrollPos = $(window).scrollTop();
+    if(scrollPos < targetPosAbout){
+        $('#navbar').toggleClass("green_bg");
+        $('#main-nav').css("background-color", "rgb(18, 87, 18)");
+    }
+  
+  });
+ 
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
