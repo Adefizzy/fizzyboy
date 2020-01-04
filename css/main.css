@@ -29,10 +29,14 @@ h1,h2,h3,h4,h5,h6{
   border-bottom: 2px #ff3748 solid;
 }
 
+
+
 #header-section{
   background-image: url(https://res.cloudinary.com/adefizzy/image/upload/c_scale,q_80,w_1664/v1578161170/bg-image_2_bqpxyw.jpg);
   background-size: cover;
   color: #fff;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 #profile-image{
