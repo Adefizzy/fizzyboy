@@ -14,7 +14,6 @@
   <!-- <script src="js/jquery.min.js"></script> -->
   
   <!-- <script src="js/bootstrap.min.js"></script> -->
-  <script src="js/main.js"></script>
 </head>
 <body>
  <div class="container-fluid">
@@ -24,7 +23,7 @@
        <h3>Web Developer</h3>
        <small>I build responsive, user friendly and robust websites</small>
        <br>
-       <button id="hire-me" class=" btn mt-5">Hire Me</button>
+       <button id="hire-me" class=" btn mt-5" onclick="window.location.href='#contact-form-section'">Hire Me</button>
      </section>
    </header>
    <main class="row">
@@ -83,18 +82,18 @@
       </form>
      </section>
    </main>
-   <footer class="row">
-     <div class="col-sm-12 col-md-6 mx-auto text-center my-4">
+   <footer id="" class="row">
+     <section id="footer-section" class="col-sm-12 col-md-6 mx-auto text-center my-4">
       <p>If you would like me to work on your project as a team or individually, i am readily available,
         kindly contact me through the contact form or call me on +2347017817802</p>
      <p>Connect with me on social media via:</p>
-     <a href="#"><i class="fa fa-facebook-square"></i></a>
-     <a href="#"><i class="fa fa-linkedin-square"></i></a>
-     <a href="#"><i class="fa fa-twitter-square"></i></a>
-     <a href="#"><i class="fa fa-tumblr-square"></i></a>
-     <a href="#"><i class="fa fa-whatsapp"></i></a>
-     </div>
+     <a href="https://github.com/Adefizzy" ><i class="fa fa-github"></i></a>
+     <a href="https://www.linkedin.com/in/adefizzy045" class="ml-2"><i class="fa fa-linkedin"></i></a>
+     <a href="https://twitter.com/Adefizzy045" class="ml-2"><i class="fa fa-twitter"></i></a>
+     <a class="ml-2" href="https://wa.me/08182369868?text=Thank%20you%20for%20reaching%20me%2C%20I%20can%20help%20you%20create%20a%20well%20functioning%2C%20robust%20and%20responsive%20websites%20or%20web%20application.%20Kindly%20let%20me%20know%20how%20I%20may%20help%20you.%20Thank%20you%20"><i class="fa fa-whatsapp "></i></a>
+     </section>
   </footer>
+  <div id="scroll-up" class="hide" onclick="window.location.href= '#header-section'"><i class="fa fa-angle-up"></i> </div>
  </div>
 
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -116,128 +115,7 @@
 
 
 <!-- javascript code to fill the template -->
-<script type="text/javascript">
-
-// grab our template code from the DOM
-var source   = $("#todo-template").html();
-
-// compile the template so we can use it
-var template = Handlebars.compile(source);
-
-// create some data
-var task1 = {
-    skills: [
-      {
-        "skillName":"HTML5",
-        "percentage": 0,
-        "percent":95
-      },
-      {
-        "skillName":"CSS3",
-        "percentage": 0,
-        "percent":85
-      },
-      {
-        "skillName":"JavaScript",
-        "percentage": 0,
-        "percent":90
-      },
-      {
-        "skillName":"JQuery",
-        "percentage": 0,
-        "percent":75
-      },
-      {
-        "skillName":"React.Js",
-        "percentage": 0,
-        "percent":75
-      },
-      {
-        "skillName":"Sass",
-        "percentage": 0,
-        "percent":80
-      },
-      {
-        "skillName":"NodeJs",
-        "percentage": 0,
-        "percent":70
-      }
-    ]
-   
-};
-var targetPos = $('#aboutMe').offset().top;
-var targetPosAbout = targetPosAbout = $('#about').offset().top;
-// // if(window.innerWidth > 767 ){
-//   targetPosAbout = $('#about').offset().top;
-// }else{
-//   targetPosAbout = $('#about_body').offset().top;
-// }
-// Function to render data on HTML
-function renderDom(data, htmlDiv){
-  var html    = template(data);
-  $(htmlDiv).html(html)
-}
-
-
-$(document).ready(function(){
-
-  renderDom(task1, "#skill_set")
-// Function to Load a bar
-
-  function loadEachBar(index, percent){
-
-  
-    $(window).scroll(()=>{
-
-    var scrollPos = $(window).scrollTop();
-
-    
-
-      if(scrollPos > targetPos){
-        let handle = setInterval(function (){
-          
-          if(task1["skills"][index]["percentage"] < percent){
-            
-            task1["skills"][index]["percentage"]++;
-
-            renderDom(task1,"#skill_set");
-
-          }
-
-        }, 50);
-
-      }
-
-     
-
-    });
-  }
-  
-  $(window).on('scroll', ()=>{
-    var scrollPos = $(window).scrollTop();
-
-    if(scrollPos >= targetPosAbout){
-        $('#navbar').css("background-color", "rgb(18, 87, 18)");
-      }else{
-        $('#navbar').css("background-color", "transparent");
-      }
-  })
-
-  for(let i = 0; i < task1["skills"].length; i++){
-    loadEachBar(i, task1["skills"][i]["percent"]);
-  }
-
-  $('#nav_button').on('click', ()=>{
-    var scrollPos = $(window).scrollTop();
-    if(scrollPos < targetPosAbout){
-        $('#navbar').toggleClass("green_bg");
-        $('#main-nav').css("background-color", "rgb(18, 87, 18)");
-    }
-  
-  });
- 
-});
-</script>
+<script src="js/main.js" ></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

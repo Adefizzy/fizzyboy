@@ -2,6 +2,13 @@
   box-sizing: border-box;
   /* border: 1px solid red; */
 }
+html{
+  scroll-behavior: smooth;
+}
+
+.hide{
+  display: none;
+}
 
 :root{
   --primary-color: #125712;
@@ -23,7 +30,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #header-section{
-  background-image: url(../images/bg-image_2.jpg);
+  background-image: url(https://res.cloudinary.com/adefizzy/image/upload/c_scale,q_80,w_1664/v1578161170/bg-image_2_bqpxyw.jpg);
   background-size: cover;
   color: #fff;
 }
@@ -124,9 +131,37 @@ footer p:nth-child(2){
   margin-bottom: 0;
 }
 
-footer a{
-  color: rgb(10, 248, 10);
+
+footer a:nth-child(3){
+  color: 333;
+  font-style: 24px;
 }
+footer a:nth-child(4){
+  color:#0e76a8;
+}
+footer a:nth-child(5){
+  color: #1DA1F2;
+}
+footer a:nth-child(6){
+  color: #4AC959 !important;
+}
+
+#scroll-up{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+
 
 @media (min-width: 768px){
   #skill-section{
@@ -136,6 +171,18 @@ footer a{
     padding-left: 60px;
    
   }
+  #header-section{
+    background-image: url(https://res.cloudinary.com/adefizzy/image/upload/c_scale,q_80,w_1664/v1578161170/bg-image_2_bqpxyw.jpg);
+    background-size: cover;
+    color: #fff;
+  }
 
+  
  
+}
+
+@media (min-width: 769px){
+  #scroll-up{
+    display: none;
+  }
 }
