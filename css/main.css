@@ -131,6 +131,9 @@ footer p:nth-child(2){
   margin-bottom: 0;
 }
 
+footer a{
+  font-size: 18px;
+}
 
 footer a:nth-child(3){
   color: 333;
