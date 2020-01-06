@@ -95,16 +95,12 @@ let headerSectionHeight;
 window.addEventListener('scroll', () => {
    windowOffSet = window.pageYOffset;
   headerSectionHeight = headerSection.getBoundingClientRect();
-  // console.log('window', windowOffSet);
-  // console.log('height', headerSectionHeight.height);
   if((headerSectionHeight.height / 2) > windowOffSet){
-    // scrollUp.classList.add('hide');
     scrollUp.style.display = 'none';
-    console.log('hidden')
   }else{
-    // scrollUp.classList.remove('hide');
-    console.log('display')
     scrollUp.style.display = 'flex';
   }
 });
+
+
 

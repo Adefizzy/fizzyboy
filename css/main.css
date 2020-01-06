@@ -35,8 +35,8 @@ h1,h2,h3,h4,h5,h6{
   background-image: url(https://res.cloudinary.com/adefizzy/image/upload/c_scale,q_80,w_1664/v1578161170/bg-image_2_bqpxyw.jpg);
   background-size: cover;
   color: #fff;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh; 
+  height: calc(var(--vh , 1vh) * 100);
 }
 
 #profile-image{
@@ -150,7 +150,7 @@ footer a:nth-child(5){
   color: #1DA1F2;
 }
 footer a:nth-child(6){
-  color: #4AC959 !important;
+  color: #4AC959;
 }
 
 #scroll-up{
